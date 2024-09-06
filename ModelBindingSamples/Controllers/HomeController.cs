@@ -13,9 +13,22 @@ namespace ModelBindingSamples.Controllers
             _logger = logger;
         }
 
+        [HttpGet]
         public IActionResult Index()
         {
             return View();
+        }
+
+        [HttpPost]
+        public IActionResult Index(Student student)
+        {
+            // This runs the validation data annotations on the student onject
+            if (ModelState.IsValid)
+            {
+                // Save the student to the database
+                return RedirectToAction("Index");
+            }
+            return View(student);
         }
 
         public IActionResult Privacy()
