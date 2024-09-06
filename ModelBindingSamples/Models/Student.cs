@@ -8,9 +8,15 @@ namespace ModelBindingSamples.Models
     {
         [Key] //Primary Key
         public int StudentId { get; set; }
-    
-        public string FullName { get; set; }
 
-        public DateTime EnrollmentDate { get; set; }
+        /// <summary>
+        /// The legal full (first and last) name of the student.
+        /// </summary>
+        public required string FullName { get; set; }
+
+        /// <summary>
+        /// The date the student was enrolled.
+        /// </summary>
+        public DateOnly EnrollmentDate { get; set; }
     }
 }
