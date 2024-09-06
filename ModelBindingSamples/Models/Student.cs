@@ -12,6 +12,7 @@ namespace ModelBindingSamples.Models
         /// <summary>
         /// The legal full (first and last) name of the student.
         /// </summary>
+        [Display(Name = "Full Name")]
         public required string FullName { get; set; }
 
         /// <summary>
